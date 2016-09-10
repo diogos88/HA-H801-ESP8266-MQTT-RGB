@@ -97,7 +97,7 @@ void setup()
 	Serial1.println("");
 
 	// init the MQTT connection
-	client.setServer(mqtt_server, 1883);
+	client.setServer(mqtt_server, mqtt_port);
 	client.setCallback(callback);
 
 	// replace chip ID in channel names
@@ -325,7 +325,7 @@ void reconnect() {
 	while (!client.connected()) {
 		Serial.print("Attempting MQTT connection...");
 		// Attempt to connect
-		if (client.connect(chip_id)) {
+		if (client.connect(chip_id, mqtt_user, mqtt_password)) {
 			Serial.println("connected");
 
 			client.publish(MQTT_UP, chip_id);

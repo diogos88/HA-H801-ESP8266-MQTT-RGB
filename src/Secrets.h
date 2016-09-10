@@ -1,6 +1,10 @@
 #pragma once
 
-const char* mqtt_server = "192.168.1.89";
+const char* mqtt_server = "127.0.0.1";
+const int mqtt_port = 1883;
+const char* mqtt_user = "user";
+const char* mqtt_password = "p4ssw0rd";
+
 // Password for update server
 const char* username = "admin";
 const char* password = "";
